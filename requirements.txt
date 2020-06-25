@@ -1,7 +1,6 @@
 numpy==1.19.0
 matplotlib==3.2.2
 Pillow==7.1.2
-os-sys==2.1.4
 pandas==1.0.5
 tensorflow==2.2.0
 Flask==1.1.2
