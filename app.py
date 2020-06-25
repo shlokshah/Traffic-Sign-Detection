@@ -4,8 +4,8 @@ from PIL import Image
 from keras.models import load_model
 
 app=Flask(__name__)
-# model=load_model("traffic_sign_detector_model.h5")
-'''
+model=load_model("traffic_sign_detector_model.h5")
+
 classes = { 1:'Speed limit (20km/h)',
             2:'Speed limit (30km/h)', 
             3:'Speed limit (50km/h)', 
@@ -49,11 +49,11 @@ classes = { 1:'Speed limit (20km/h)',
             41:'Roundabout mandatory', 
             42:'End of no passing', 
             43:'End no passing veh > 3.5 tons' }
-'''
+
 @app.route('/')
 def index():
 	return render_template('index.html')
-'''
+
 @app.route('/success', methods=['POST'])
 def success():
 	if request.method=='POST':
@@ -66,6 +66,6 @@ def success():
 		pred = model.predict_classes([image])[0]
 		text=classes[pred+1]
 		return render_template('success.html', sign=text)
-'''
+
 if __name__=="__main__":
 	app.run()
