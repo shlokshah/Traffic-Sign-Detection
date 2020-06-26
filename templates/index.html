@@ -1,12 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hello world</title>
+	<title>Detect Traffic Signs</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<form action = "/success" method = "post" enctype="multipart/form-data">  
-        <input type="file" name="photo" />  
-        <input type = "submit" value="Upload">  
-    </form>
+	<div class="jumbotron text-center">
+  		<h1>Traffic Sign Detector</h1>
+  		<p>Developed by Shlok Shah</p> 
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="text-center">
+				<form action = "/success" method = "post" enctype="multipart/form-data" style="padding-left: 33%;">
+				<table style="align: center;">
+					<tr>
+						<td style="padding-right: 10px;">
+							<input class="btn btn-default" type="file" name="photo">
+						</td>
+						<td>
+							<input class="btn btn-primary" type = "submit" value="Upload">
+						</td>
+					</tr>
+				</table> 
+				</form>
+				<p>(Upload RGB images only)</p>
+			</div>
+		</div>
+		<br>
+		<br>
+		<div class="row">
+			<div class="text-center">
+				<p>Using CNNs to identify traffic signs and classify them in one of 43 categories.</p>
+			</div>
+		</div>
+		<div class="row">
+			<table>
+				<col style="width: 10%">
+				<col style="width: 90%">
+				<tr>
+					<td>
+						<u>Accuracy:</u>
+					</td>
+					<td>
+						<b>~95%</b>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<u>Framework:</u>
+					</td>
+					<td>
+						Keras integrated in TensorFlow 2.2.0
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<u>Dataset:</u>
+					</td>
+					<td>
+						<a href="https://www.kaggle.com/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign">GTSRB - German Traffic Sign Recognition Benchmark</a> hosted on Kaggle. It has a total of 39,209 images for training, stored in 43 subfolders. Each training image is 3 channel (RGB) of size 30x30. For testing, there are 12,631 images. 
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<u>Model summary:</u>
+					</td>
+					<td>
+						<img src="../static/model_summary.jpg" height="50%">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<u>Model accuracy:</u>
+					</td>
+					<td>
+						<img src="../static/model_accuracy.jpg" height="50%" alt="Model accuracy graph">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<u>Source Code:</u>
+					</td>
+					<td>
+						<a href="https://github.com/shlokshah/Traffic-Sign-Detection">GitHub Repository</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<br>
+		<br>
+	</div>
 </body>
 </html>
